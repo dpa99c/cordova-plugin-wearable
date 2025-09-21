@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-wearable-tests"
+        version="1.0.0">
+
+    <name>Wearable Plugin Tests</name>
+    <description>Tests for cordova-plugin-wearable</description>
+    <license>MIT</license>
+
+    <js-module src="tests.js" name="tests">
+    </js-module>
+</plugin>

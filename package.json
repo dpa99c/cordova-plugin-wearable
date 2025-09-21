@@ -1,10 +1,11 @@
 {
     "version": "1.0.0",
     "name": "cordova-plugin-wearable",
+    "types": "types/wearable.d.ts",
     "cordova_name": "Wearable",
-    "description": "Cordova/Phonegap plugin for iOS and Android to assist in wearable device interactions for WearOS and watchOS.",
+    "description": "Cordova/Capacitor plugin for iOS and Android to assist in wearable device interactions for WearOS and watchOS.",
     "author": "Dave Alden",
-    "license": "MIT",
+    "license": "GPL-3.0-or-later",
     "repository": {
         "type": "git",
         "url": "https://github.com/dpa99c/cordova-plugin-wearable.git"
@@ -20,12 +21,21 @@
     "keywords": [
         "ecosystem:cordova",
         "cordova",
-        "phonegap",
+        "capacitor",
         "ios",
         "android",
         "wearable",
         "wearos",
         "watchos"
     ],
-    "dependencies": {}
+    "scripts": {
+        "test:android": "cordova-paramedic --platform android --plugin .",
+        "test:ios": "cordova-paramedic --platform ios --plugin . --target=\"iPhone-17-Pro, 26.0\"",
+        "test:both": "npm run test:android && npm run test:ios"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "cordova-plugin-test-framework": "^4.0.0",
+        "cordova-paramedic": "^3.0.1"
+    }
 }

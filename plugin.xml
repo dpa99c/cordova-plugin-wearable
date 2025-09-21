@@ -5,6 +5,10 @@
         id="cordova-plugin-wearable"
         version="1.0.0">
 
+    <!-- Plugin variables allowing consumers to override Play Services versions at install time -->
+    <preference name="PLAY_SERVICES_WEARABLE_VERSION" default="18.0.0" />
+    <preference name="PLAY_SERVICES_TASKS_VERSION" default="18.0.1" />
+
     <name>Wearable</name>
     <description>Cordova/Phonegap plugin for iOS and Android to assist in wearable device interactions for WearOS and watchOS.</description>
     <author>Dave Alden</author>
@@ -28,11 +32,20 @@
             </feature>
         </config-file>
 
-        <header-file src="src/ios/Wearable.swift"/>
+        <!-- Swift source files for iOS -->
+        <source-file src="src/ios/WearableImpl.swift" />
+        <source-file src="src/ios/Wearable.swift" />
+        <source-file src="src/ios/StateModels.swift" />
+        <source-file src="src/ios/StateStore.swift" />
+        <source-file src="src/ios/StateSync.swift" />
+        <source-file src="src/ios/WatchConnect.swift" />
+        <source-file src="src/ios/Logger.swift" />
+        <source-file src="src/ios/RetryHelper.swift" />
     </platform>
 
     <!-- android -->
     <platform name="android">
+        <!-- Write preferences and feature into res/xml/config.xml -->
         <config-file target="res/xml/config.xml" parent="/*">
 
             <preference name="AndroidXEnabled" value="true" />
@@ -41,9 +54,43 @@
             <feature name="Wearable">
                 <param name="android-package" value="cordova.plugin.wearable.Wearable"/>
             </feature>
+            
         </config-file>
 
-        <source-file src="src/android/Wearable.kt" target-dir="src/cordova/plugin/wearable"/>
+        <!-- Declare foreground service and FOREGROUND_SERVICE permission for background-capable Wearable handling -->
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+            <!-- Required for foregroundServiceType="connectedDevice" on newer Android SDKs -->
+            <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
+            <!-- Bluetooth permission to allow connected-device foreground service to use Bluetooth connectivity features -->
+            <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <service android:name="cordova.plugin.wearable.WearableForegroundService" android:exported="false" android:foregroundServiceType="connectedDevice" />
+        </config-file>
+
+        <!-- External frameworks / Gradle dependencies -->
+        <!-- Google Play services Wearable and Tasks -->
+        <framework src="com.google.android.gms:play-services-wearable:$PLAY_SERVICES_WEARABLE_VERSION" />
+        <framework src="com.google.android.gms:play-services-tasks:$PLAY_SERVICES_TASKS_VERSION" />
+        <!-- WorkManager runtime (used for periodic heartbeat scheduling) -->
+        <framework src="androidx.work:work-runtime-ktx:2.8.1" />
+
+        <!-- Kotlin source files for Android -->
+        <source-file src="src/android/WearableImpl.kt" target-dir="java/cordova/plugin/wearable"/>
+        <source-file src="src/android/Wearable.kt" target-dir="java/cordova/plugin/wearable"/>
+        <source-file src="src/android/WatchConnect.kt" target-dir="java/cordova/plugin/wearable"/>
+        <source-file src="src/android/WearableForegroundService.kt" target-dir="java/cordova/plugin/wearable"/>
+        <source-file src="src/android/WearableHeartbeatWorker.kt" target-dir="java/cordova/plugin/wearable"/>
+        <source-file src="src/android/Logger.kt" target-dir="java/cordova/plugin/wearable"/>
+        <source-file src="src/android/ListenerBridge.kt" target-dir="java/cordova/plugin/wearable"/>
+        <source-file src="src/android/PluginEventBridge.kt" target-dir="java/cordova/plugin/wearable"/>
+        <source-file src="src/android/StateSyncSpec.kt" target-dir="java/cordova/plugin/wearable"/>
+        <source-file src="src/android/StateModels.kt" target-dir="java/cordova/plugin/wearable"/>
+        <source-file src="src/android/StateStore.kt" target-dir="java/cordova/plugin/wearable"/>
+        <source-file src="src/android/StateSync.kt" target-dir="java/cordova/plugin/wearable"/>
+        <source-file src="src/android/RetryHelper.kt" target-dir="java/cordova/plugin/wearable"/>
     </platform>
 
 </plugin>

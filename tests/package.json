@@ -1,0 +1,17 @@
+{
+    "name": "cordova-plugin-wearable-tests",
+    "version": "1.0.0",
+    "description": "Tests for cordova-plugin-wearable plugin",
+    "cordova": {
+        "id": "cordova-plugin-wearable-tests",
+        "platforms": []
+    },
+    "keywords": [
+        "ecosystem:cordova",
+        "cordova-plugin-wearable"
+    ],
+    "peerDependencies": {
+        "cordova-plugin-wearable": "*",
+        "cordova-plugin-test-framework": "*"
+    }
+}
