@@ -1,0 +1,31 @@
+{
+    "version": "1.0.0",
+    "name": "cordova-plugin-wearable",
+    "cordova_name": "Wearable",
+    "description": "Cordova/Phonegap plugin for iOS and Android to assist in wearable device interactions for WearOS and watchOS.",
+    "author": "Dave Alden",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dpa99c/cordova-plugin-wearable.git"
+    },
+    "cordova": {
+        "id": "cordova-plugin-wearable",
+        "platforms": [
+            "android",
+            "ios"
+        ]
+    },
+    "issue": "https://github.com/dpa99c/cordova-plugin-wearable/issues",
+    "keywords": [
+        "ecosystem:cordova",
+        "cordova",
+        "phonegap",
+        "ios",
+        "android",
+        "wearable",
+        "wearos",
+        "watchos"
+    ],
+    "dependencies": {}
+}

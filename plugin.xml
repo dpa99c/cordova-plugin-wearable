@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-wearable"
+        version="1.0.0">
+
+    <name>Wearable</name>
+    <description>Cordova/Phonegap plugin for iOS and Android to assist in wearable device interactions for WearOS and watchOS.</description>
+    <author>Dave Alden</author>
+
+    <repo>https://github.com/dpa99c/cordova-plugin-wearable.git</repo>
+    <issue>https://github.com/dpa99c/cordova-plugin-wearable/issues</issue>
+
+    <keywords>ecosystem:cordova,cordova,phonegap,ios,android,wearable,wearos,watchos</keywords>
+
+    <license>MIT</license>
+
+    <js-module src="www/wearable.js" name="Wearable">
+        <clobbers target="Wearable"/>
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Wearable">
+                <param name="ios-package" value="Wearable"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/Wearable.swift"/>
+    </platform>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+
+            <preference name="AndroidXEnabled" value="true" />
+            <preference name="GradlePluginKotlinEnabled" value="true" />
+
+            <feature name="Wearable">
+                <param name="android-package" value="cordova.plugin.wearable.Wearable"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/Wearable.kt" target-dir="src/cordova/plugin/wearable"/>
+    </platform>
+
+</plugin>
