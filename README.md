@@ -1,4 +1,4 @@
-cordova-plugin-wearable
+cordova-plugin-wearable [![Latest Stable Version](https://img.shields.io/npm/v/cordova-plugin-wearable.svg)](https://www.npmjs.com/package/cordova-plugin-wearable) [![Total Downloads](https://img.shields.io/npm/dt/cordova-plugin-wearable.svg)](https://npm-stat.com/charts.html?package=cordova-plugin-wearable) [![License](https://img.shields.io/npm/l/cordova-plugin-wearable.svg)](https://www.npmjs.com/package/cordova-plugin-wearable)
 =======================
 
 A Cordova/Capacitor plugin that provides a cross-platform JavaScript API for Android & iOS mobile apps to communicate with their companion watch apps on their respective wearable platform (Wear OS and watchOS).
