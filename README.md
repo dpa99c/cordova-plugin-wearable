@@ -75,13 +75,12 @@ It is currently the only plugin that offers a unified plugin API for both iOS/wa
 
 - **Bi-directional communication out-of-the-box**: Built-in support for sending and receiving messages in both directions—phone to watch and watch to phone—with a clean, Promise-based API.
 
-| <img src="img/ios.message.png" alt="iOS message" height="400px" /> | <img src="img/watchos.message.png" alt="WatchOS message" height="300px" /> 
-<img src="img/android.message.png" alt="Android message" height="400px" /> | <img src="img/wearos.message.png" alt="WearOS message" height="300px" /> 
+<img src="img/ios.message.png" alt="iOS message" height="300px" /><img src="img/watchos.message.png" alt="WatchOS message" height="200px" /><img src="img/android.message.png" alt="Android message" height="300px" /><img src="img/wearos.message.png" alt="WearOS message" height="200px" /> 
 
 - **Shared State Synchronization**: Includes an optional per-path Last-Writer-Wins (LWW) CRDT state sync subsystem for effortless state replication between devices. Perfect for syncing UI state, preferences, and small data objects without manual message handling.
 
-| <img src="img/ios.state.png" alt="iOS state sync" height="400px" /> | <img src="img/watchos.state.png" alt="WatchOS state sync" height="300px" /> 
-<img src="img/android.state.png" alt="Android state sync" height="400px" /> | <img src="img/wearos.state.png" alt="WearOS state sync" height="300px" /> 
+<img src="img/ios.state.png" alt="iOS state sync" height="300px" /><img src="img/watchos.state.png" alt="WatchOS state sync" height="200px" /> 
+<img src="img/android.state.png" alt="Android state sync" height="300px" /><img src="img/wearos.state.png" alt="WearOS state sync" height="200px" /> 
 
 - **Modern platform support**: Leverages current Google Play Services APIs (MessageClient, DataClient, CapabilityClient) and WatchConnectivity framework, ensuring compatibility with modern Wear OS and watchOS versions.
 
@@ -91,7 +90,7 @@ It is currently the only plugin that offers a unified plugin API for both iOS/wa
 
 - **Tested and verified**: Comes with a comprehensive automated test suite using `cordova-paramedic` to ensure reliability across platforms and use cases.
 
-| <img src="img/ios.tests.png" alt="iOS tests" height="400px" /> | <img src="img/android.tests.png" alt="Android tests" height="400px" /> 
+<img src="img/ios.tests.png" alt="iOS tests" height="400px" /><img src="img/android.tests.png" alt="Android tests" height="400px" /> 
 
 - **Developer-friendly**: Comprehensive documentation, working example apps for both phone and watch platforms, and detailed debugging guidance to help you build robust wearable experiences.
 
