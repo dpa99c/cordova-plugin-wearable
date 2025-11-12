@@ -13,10 +13,6 @@ What this repository is
  - The repository also contains a Wear OS example app under `cordova-plugin-wearable-example/wearos-app` — a standalone Gradle/Kotlin project (the wear module) used to test the watch-side implementation.
 - Approx repo size & shape: Small plugin (tens of files). Key folders: `src/` (native sources), `www/` (plugin JS), `cordova-plugin-wearable-example/cordova-app/` (example app), root `plugin.xml`, and `package.json`.
 
-Important Note
---------------
-This project is not live yet so no changelog, version bumps, backwards compatibility, or deprecation policies are in effect. However, treat it as a production-quality plugin that will be used by real developers once released.
-
 Important trust rule
 -------------------
 Trust the contents of this file. Do not run broad searches or mass edits unless the instructions here fail or a test indicates a mismatch.
