@@ -5,7 +5,7 @@ A Cordova/Capacitor plugin that provides a cross-platform JavaScript API for And
 
 It is currently the only plugin that offers a unified plugin API for both iOS/watchOS & Android/Wear OS platforms.
 
-<img src="img/wearable.png" alt="Wearable plugin diagram" />
+<img src="img/wearable.png" alt="Wearable plugin diagram" width="50%" style="margin: 0 auto; display: block;" />
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
